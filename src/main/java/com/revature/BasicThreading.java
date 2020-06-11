@@ -21,6 +21,21 @@ package com.revature;
  *  by leveraging multiple CPU cores at the same time. Threads can execute concurrently. 
  *  We do not decide if they do.  This behavior is completely implementation specific.
  *
+ *  Threading can affect the Java application lifecycle.  This is because when using normal threads
+ *  the application is considered closed or terminated when ALL threads have finished - not just the
+ *  main thread. However, it is possible to define threads which will not keep the application running.
+ *  These threads are called 'daemon threads'.  Daemon threads are a good option in the case that you
+ *  need a separate thread to manage some background task that shouldn't keep the application
+ *  alive.
+ *
+ *	* Thread - Low level thread - basic fundamental threading
+ *  * Callable - Like a thread that resolves to value (Future or CompleteableFuture)
+ *  * ExecuterService - Manage Thread pool and use threads to complete tasks.
+ *  * ForkJoinPool/ForkJoinTask - Divide and conquer concurrency strategy.
+ *  * ParallelStream - Streams are used for functional programming, there is a simple conversion
+ *  		allow functional operations to happen concurrently.
+ *  * For more: check java.concurrent 
+ *
  */
 public class BasicThreading {
 	
